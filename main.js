@@ -20,8 +20,8 @@ function searchImages(searchWord){
 	    var html_result ="";
 		jQuery.each(data.hits, function() {
 			
-			console.log(this);
-			
+			//console.log(this);
+
 			var height= this.imageHeight;
 			var width= this.imageWidth;
 
@@ -29,16 +29,24 @@ function searchImages(searchWord){
 			if(width>300 && height>300){
 				// validate width vs height
 				if(width>height){
-				  html_result = html_result+'<div class="result">'
-				  							+'<a href="'+this.pageURL+'" target="_blank">'
-				  								+'<img src="'+this.previewURL+'" class="image image--result">'
-				  							+'</a>'
-				  								+'<div class="detail--result">'
-					  								+this.likes+' <img src="img/like.png" class="icon"> '
-					  								+this.comments+' <img src="img/comment.png" class="icon"> '
-					  								+this.favorites+' <img src="img/fav.png" class="icon"> '
-					  								+'</div>'
-				  							+'</div>';
+					// validate width  vs height + 250px
+					console.log(height);console.log(width);
+					if(width<=(height+1000)){
+						console.log("pasa");
+						  html_result = html_result+'<div class="result">'
+						  							+'<a href="'+this.pageURL+'" target="_blank">'
+						  								+'<img src="'+this.previewURL+'" class="image image--result">'
+						  								+'<p class="image--size">'+width+' X '+height+'<p>'
+						  							+'</a>'
+						  								+'<div class="detail--result">'
+							  								+this.likes+' <img src="img/like.png" class="icon"> '
+							  								+this.comments+' <img src="img/comment.png" class="icon"> '
+							  								+this.favorites+' <img src="img/fav.png" class="icon"> '
+							  								+'</div>'
+						  							+'</div>';
+					}else{
+						console.log("no pasa");
+					}
 				}
 			}
 		});
