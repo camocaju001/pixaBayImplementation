@@ -3,6 +3,11 @@ $(function() {
 		var searchWord = $( ".input--search" ).val();
 	  	searchImages(searchWord);
 	});
+	$( ".button--search" ).click(function(event) {
+		event.preventDefault();
+		var searchWord = $( ".input--search" ).val();
+	  	searchImages(searchWord);
+	});
 });
 
 function searchImages(searchWord){
@@ -11,27 +16,34 @@ function searchImages(searchWord){
   	$.ajax({
 	  url: url_pixabay,
 	}).done(function(data) {
-	   var html_result ="";
+
+	    var html_result ="";
 		jQuery.each(data.hits, function() {
+			
+			console.log(this);
 			
 			var height= this.imageHeight;
 			var width= this.imageWidth;
-			console.log(" h"+height+" w"+width);
-			if(width>height){
-			  html_result = html_result+'<div class="result">'
-			  							+'<a href="'+this.pageURL+'" target="_blank">'
-			  								+'<img src="'+this.previewURL+'" class="image image--result">'
-			  							+'</a>'
-			  								+'<div class="detail--result">'
-				  								+this.likes+' <img src="img/like.png" class="icon"> '
-				  								+this.comments+' <img src="img/comment.png" class="icon"> '
-				  								+this.favorites+' <img src="img/fav.png" class="icon"> '
-				  								+'</div>'
-			  							+'</div>';
+
+			//second size validation
+			if(width>300 && height>300){
+				// validate width vs height
+				if(width>height){
+				  html_result = html_result+'<div class="result">'
+				  							+'<a href="'+this.pageURL+'" target="_blank">'
+				  								+'<img src="'+this.previewURL+'" class="image image--result">'
+				  							+'</a>'
+				  								+'<div class="detail--result">'
+					  								+this.likes+' <img src="img/like.png" class="icon"> '
+					  								+this.comments+' <img src="img/comment.png" class="icon"> '
+					  								+this.favorites+' <img src="img/fav.png" class="icon"> '
+					  								+'</div>'
+				  							+'</div>';
+				}
 			}
 		});
 
-	  $('.noResultados').html("Numero de resultados: "+data.total);
+	  $('.noResults').html("Numero de resultados: "+data.total);
 	  $('.results').html(html_result);
 	});
 }

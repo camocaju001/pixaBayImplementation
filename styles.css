@@ -76,11 +76,20 @@ body{
 		padding-top: 5px;
 		font-size: 15px;
 	}
+
 .icon{
 	width: 15px;
 }
-.noResultados{
+.noResults{
 	text-align: center;
     margin: 0;
     color: #909090;
+}
+
+.footer{
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+	background: #fff;
 }
