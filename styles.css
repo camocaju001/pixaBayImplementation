@@ -58,15 +58,27 @@ body{
 
 .image{
 	max-width: 90%;
-	min-width: 200px;
+}
+.result{
+	width: 20%;
+	min-width: 250px;
+	float: left;
+	margin: 2%;
 }
 	.image--result{
-		float: left;
-		margin: 2%;
-		width: 20%;
-		height: 150px;
+	    width: 100%;
+	    float: left;
+	    height: 150px;	
 	}
-
+	.detail--result{
+		width: 100%;
+		float: left;
+		padding-top: 5px;
+		font-size: 15px;
+	}
+.icon{
+	width: 15px;
+}
 .noResultados{
 	text-align: center;
     margin: 0;
