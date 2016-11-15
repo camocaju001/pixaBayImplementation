@@ -29,10 +29,9 @@ function searchImages(searchWord){
 			if(width>300 && height>300){
 				// validate width vs height
 				if(width>height){
+					
 					// validate width  vs height + 250px
-					console.log(height);console.log(width);
 					if(width<=(height+1000)){
-						console.log("pasa");
 						  html_result = html_result+'<div class="result">'
 						  							+'<a href="'+this.pageURL+'" target="_blank">'
 						  								+'<img src="'+this.previewURL+'" class="image image--result">'
@@ -44,10 +43,7 @@ function searchImages(searchWord){
 							  								+this.favorites+' <img src="img/fav.png" class="icon"> '
 							  								+'</div>'
 						  							+'</div>';
-					}else{
-						console.log("no pasa");
 					}
-				}
 			}
 		});
 
