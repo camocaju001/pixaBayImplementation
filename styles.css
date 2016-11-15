@@ -1,0 +1,74 @@
+ /**
+  * Css for PixaBay implementation
+  */
+body{
+	margin: 0;
+	padding: 0;
+	font-family: monospace;
+}
+
+.wrapper{
+	max-width: 1200px;
+	width: 80%;
+	margin:auto;
+}
+.block{
+	float: left;
+	position: relative;
+	min-width: 200px;
+	width: 90%;
+    padding: 20px 5%;
+}
+	.block--search{
+		background: #61a6c7;
+		text-align: center;
+	}
+	.block--results{
+		background: #ebebeb;
+	}
+
+.input{
+	border:none;
+	background: #fff;
+	padding: 10px 5%;
+	min-width: 200px;
+	font-size: 80%;
+	margin: 5;
+}
+	.input--search{
+		width: 70%;
+		height: 30px;
+		float: left;
+	}
+
+.button{
+	border:none;
+	background: #376479;
+	padding: 10px 5%;
+	color:#fff;
+	min-width: 120px;
+	font-size: 80%;
+	margin: 5;
+}
+	.button--search{
+		width: 15%;
+		height: 30px;
+		float: right;
+	}
+
+.image{
+	max-width: 90%;
+	min-width: 200px;
+}
+	.image--result{
+		float: left;
+		margin: 2%;
+		width: 20%;
+		height: 150px;
+	}
+
+.noResultados{
+	text-align: center;
+    margin: 0;
+    color: #909090;
+}
